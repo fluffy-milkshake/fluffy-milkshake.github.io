@@ -21,7 +21,7 @@ html {
   /* 4 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  img[src*="rosalindcroad.jpg"] {
+  img[src*="images/rosalindcroad.jpg"] {
     border-radius: 10px;
   } 
 }
