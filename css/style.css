@@ -28,4 +28,9 @@ html {
     border-width: 1px;
     border-color: pink;
   } 
+
+  body {
+    margin-inline: auto;
+    max-width: 55ch;
+  }
 }
