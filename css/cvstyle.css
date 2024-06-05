@@ -5,8 +5,8 @@
 }
 
 body {
-	/* limit the size of the width to 55 characters */
-	max-width: 55ch;
+	/* limit the size of the width to 60 characters */
+	max-width: 60ch;
 	/* 0 margin at top, and center at the sides - "auto" means center, effectively */
 	margin: 0 auto;
 	/* add 1 characters worth padding around all edges */
@@ -40,13 +40,14 @@ body > section {
 		grid-column: 2 / 3;
 		margin: 0;
 	}
-	> h3 {
+	> h3, h4 {
 		/* h3 titles go all the way across */
-		grid-column: 1 / 3;
+		grid-column: 2 / 3;
 	}
-	> h4 {
+	> .date {
 		/* dates start at tab stop 1 and don't go further */
 		grid-column: 1;
+    text-align: match-parent;
 	}
 }
 /* if the screen is no wider than 450 device pixels...*/
@@ -63,6 +64,9 @@ body > section {
 		> h4 {
 			grid-column: 1 / 3;
 		}
+    > .date {
+      grid-column: 1/3;
+    }
 	}
 }
 
