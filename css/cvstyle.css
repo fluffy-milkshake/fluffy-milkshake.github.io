@@ -27,22 +27,22 @@ body > section {
 	display: grid;
 	/* with 2 columns, first column gets 1 portion */
 	/* second column gets 3 portions, roughly */
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr 4fr;
 	/* assure a 1 character gap between the columns */
 	gap: 1ch;
 	/* and put a small dotted border at the end of each section */
-	border-bottom: 1px dotted #666;
+	/*border-bottom: 1px dotted #666;*/
 	/* and add a bit of padding at the top, but not sides */
-	padding: 1ch 0;
+	padding: 1.5ch 0;
 	> * {
 		/* any direct child item will start at */
 		/* gridline 1, go to 3. gridlines are like tab stops */
-		grid-column: 2 / 3;
+		grid-column: 2 / 4;
 		margin: 0;
 	}
 	> h3, h4 {
 		/* h3 titles go all the way across */
-		grid-column: 2 / 3;
+		grid-column: 2 / 4;
 	}
 	> .date {
 		/* dates start at tab stop 1 and don't go further */
@@ -56,16 +56,16 @@ body > section {
 		/* make anything in the grid go all the way */
 		/* from grid line 1 to grid line 3 */
 		> * {
-			grid-column: 1 / 3;
+			grid-column: 1 / 4;
 		}
 		> h3 {
-			grid-column: 1 / 3;
+			grid-column: 1 / 4;
 		}
 		> h4 {
-			grid-column: 1 / 3;
+			grid-column: 1 / 4;
 		}
     > .date {
-      grid-column: 1/3;
+      grid-column: 1/4;
     }
 	}
 }
