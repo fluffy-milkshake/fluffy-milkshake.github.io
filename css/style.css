@@ -53,6 +53,17 @@ body.cv {
 	padding: 1ch;
 }
 
+body.cv h2 {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+body.cv p {
+	font-size: 14px;
+	font-weight: 400;
+	color: #555555;
+}
+
 /* STYLE FOR CV PAGE ONLY */
 /* for any section that's a direct child of the body */
 body.cv > section {
@@ -65,6 +76,8 @@ body.cv > section {
 	gap: 1ch;
 	/* and add a bit of padding at the top, but not sides */
 	padding: 1.5ch 0;
+	font-size: 14px;
+	font-weight: 400;
 	> * {
 		/* any direct child item will start at gridline 1, go to 4. gridlines are like tab stops */
 		grid-column: 2 / 4;
@@ -73,11 +86,17 @@ body.cv > section {
 	> h3, h4 {
 		/* h3 titles go all the way across */
 		grid-column: 2 / 4;
+		font-size: 14px;
+		font-weight: 400;
+	}
+	> h4 {
+		color: #555555;
 	}
 	> .date {
 		/* dates start at tab stop 1 and don't go further */
 		grid-column: 1;
     	text-align: match-parent;
+		color: #999999;
 	}
 }
 /* STYLE FOR CV PAGE ONLY */
