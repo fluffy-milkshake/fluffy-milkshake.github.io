@@ -2,6 +2,10 @@
 ::after,
 ::before {
 }
+
+* {
+	box-sizing: border-box;
+}
 /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -31,6 +35,75 @@ img[src*="images/rosalindcroad.jpg"] {
 
 body {
     margin-inline: auto;
-    max-width: 55ch;
+    max-width: 60ch;
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+	/* leave less orphans for lines of text in headers */
+	text-wrap: balance;
+}
+
+/* css for cv page only */
+body.cv {
+	/* limit the size of the width to 60 characters */
+	/*max-width: 60ch;*/
+	/* 0 margin at top, and center at the sides - "auto" means center, effectively */
+	margin: 0 auto;
+	/* add 1 characters worth padding around all edges */
+	padding: 1ch;
+}
+
+/* css for cv page only */
+/* for any section that's a direct child of the body */
+body.cv > section {
+	/* it'll be a grid */
+	display: grid;
+	/* with 2 columns, first column gets 1 portion */
+	/* second column gets 3 portions, roughly */
+	grid-template-columns: 1fr 4fr;
+	/* assure a 1 character gap between the columns */
+	gap: 1ch;
+	/* and put a small dotted border at the end of each section */
+	/*border-bottom: 1px dotted #666;*/
+	/* and add a bit of padding at the top, but not sides */
+	padding: 1.5ch 0;
+	> * {
+		/* any direct child item will start at */
+		/* gridline 1, go to 3. gridlines are like tab stops */
+		grid-column: 2 / 4;
+		margin: 0;
+	}
+	> h3, h4 {
+		/* h3 titles go all the way across */
+		grid-column: 2 / 4;
+	}
+	> .date {
+		/* dates start at tab stop 1 and don't go further */
+		grid-column: 1;
+    text-align: match-parent;
+	}
+}
+/* css for cv page only */
+/* if the screen is no wider than 450 device pixels...*/
+@media (max-width: 450px) {
+	body.cv > section {
+		/* make anything in the grid go all the way */
+		/* from grid line 1 to grid line 3 */
+		> * {
+			grid-column: 1 / 4;
+		}
+		> h3 {
+			grid-column: 1 / 4;
+		}
+		> h4 {
+			grid-column: 1 / 4;
+		}
+    > .date {
+      grid-column: 1/4;
+    }
+	}
 }
