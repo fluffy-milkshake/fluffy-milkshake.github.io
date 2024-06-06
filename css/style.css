@@ -6,33 +6,31 @@
 * {
 	box-sizing: border-box;
 }
-/*
-1. Use a consistent sensible line-height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-3. Use a more readable tab size.
-4. Use the user's configured `sans` font-family by default.
-*/
 
 html {
+  /* Use a consistent sensible line-height in all browsers. */
   line-height: 1.5;
-  /* 1 */
+  /* Prevent adjustments of font size after orientation changes in iOS. */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
+  /* Use a more readable tab size. */
   -moz-tab-size: 4;
-  /* 3 */
   -o-tab-size: 4;
   tab-size: 4;
-  /* 4 */
+  /* Use the user's configured `sans` font-family by default. */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
+  /* ros profile photo, shape and size */
 img[src*="images/rosalindcroad.jpg"] {
     padding: 10px;
+	/* give image rounded corners */
     border-radius: 10px;
+	/* wrapping border around image */
     border-style: solid;
     border-width: 1px;
     border-color: pink;
   } 
 
+/* set position and width of body text across website */
 body {
     margin-inline: auto;
     max-width: 60ch;
@@ -47,17 +45,15 @@ h4 {
 	text-wrap: balance;
 }
 
-/* css for cv page only */
+/* STYLE FOR CV PAGE ONLY */
 body.cv {
-	/* limit the size of the width to 60 characters */
-	/*max-width: 60ch;*/
 	/* 0 margin at top, and center at the sides - "auto" means center, effectively */
 	margin: 0 auto;
 	/* add 1 characters worth padding around all edges */
 	padding: 1ch;
 }
 
-/* css for cv page only */
+/* STYLE FOR CV PAGE ONLY */
 /* for any section that's a direct child of the body */
 body.cv > section {
 	/* it'll be a grid */
@@ -67,13 +63,10 @@ body.cv > section {
 	grid-template-columns: 1fr 4fr;
 	/* assure a 1 character gap between the columns */
 	gap: 1ch;
-	/* and put a small dotted border at the end of each section */
-	/*border-bottom: 1px dotted #666;*/
 	/* and add a bit of padding at the top, but not sides */
 	padding: 1.5ch 0;
 	> * {
-		/* any direct child item will start at */
-		/* gridline 1, go to 3. gridlines are like tab stops */
+		/* any direct child item will start at gridline 1, go to 4. gridlines are like tab stops */
 		grid-column: 2 / 4;
 		margin: 0;
 	}
@@ -84,15 +77,15 @@ body.cv > section {
 	> .date {
 		/* dates start at tab stop 1 and don't go further */
 		grid-column: 1;
-    text-align: match-parent;
+    	text-align: match-parent;
 	}
 }
-/* css for cv page only */
+/* STYLE FOR CV PAGE ONLY */
 /* if the screen is no wider than 450 device pixels...*/
 @media (max-width: 450px) {
 	body.cv > section {
 		/* make anything in the grid go all the way */
-		/* from grid line 1 to grid line 3 */
+		/* from grid line 1 to grid line 4 */
 		> * {
 			grid-column: 1 / 4;
 		}
@@ -102,6 +95,7 @@ body.cv > section {
 		> h4 {
 			grid-column: 1 / 4;
 		}
+	/* dates start at tab stop 1 and don't go further */
     > .date {
       grid-column: 1/4;
     }
