@@ -33,7 +33,7 @@ img[src*="images/rosalindcroad.jpg"] {
 /* set position and width of body text across website */
 body {
     margin-inline: auto;
-    max-width: 60ch;
+    max-width: 70ch;
 	font-size: 14px;
 	padding: 1ch;
   }
