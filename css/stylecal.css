@@ -21,15 +21,8 @@ html {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  counter-reset: caldays;
   }
-
-.one {
-  counter-reset: caldays 32;
-}
-
-.zero {
-  counter-reset: caldays 31;
-}
 
 .days li {
   outline: 1px solid grey;
@@ -39,10 +32,26 @@ html {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
 } 
+
+.done12 {
+  background-color: #9BE9A8;
+}
+
+.done34 {
+  background-color: #40C463;
+}
+
+.done56 {
+  background-color: #30A14E;
+}
+
+.done7 {
+  background-color: #216937;
+}
   
 .days li::before {
   content: counter(caldays);
-  counter-increment: caldays -1;
+  counter-increment: caldays;
   }
 
 .days li p {
