@@ -1,38 +1,58 @@
+/*set font size and style for months and days*/
 html {
-  font-size: 14px;
+  font-size: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   text-align: center;
 }
 
 .month {
+    /*display month days/boxes in line with month titles */
     display: flex;
+    /*add space between month sections */
     margin-bottom: 1rem;
   }
   
 .month header {
+  /*add left margin space to month header*/
   width: 10%;
   }
   
 .days {
+  /*display day boxes/circles in grid lines*/
   display: grid;
+  /*set the grid to rows of 7 like weeks*/
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /*add space between each box/circle*/
   grid-gap: 1rem;
+  /*make box/circles grows proportionally*/
   flex-grow: 1;
+  /*make space between rows and columns even*/
   margin: 0;
   padding: 0;
+  /*remove atuomatic html li styling that would add . to each number*/
   list-style-type: none;
+  /*replace counter styling*/
   counter-reset: caldays;
   }
 
+/*make counter count up*/
+.days li::before {
+  content: counter(caldays);
+  counter-increment: caldays;
+  }
+
 .days li {
+  /*add border styling*/
   outline: 1px solid grey;
-  /*display: inline-block; */
   height: auto;
   width: 100%;
+  /*proportion boxes to cubes, or evenly ratioed circles*/
   aspect-ratio: 1 / 1;
+  /*turn boxes into circles*/
   border-radius: 50%;
 } 
 
+/*give different color tone to each day depending on how many hours worked. 12 means 1-2 hrs, 34 means 3-4 hrs, etc.*/
 .done12 {
   background-color: #9BE9A8;
 }
@@ -48,18 +68,16 @@ html {
 .done7 {
   background-color: #216937;
 }
-  
-.days li::before {
-  content: counter(caldays);
-  counter-increment: caldays;
-  }
 
+/*make <p> text explaning what actions were taken each day hidden*/
 .days li p {
   display: none;
-  font-size: 0.8rem;
-  }
+}
   
+/*display <p> when mouse hovers over*/
 .days li:hover p {
   display: block;
+  /*change font size of <p> so it isn't too large*/
+  font-size: 0.8rem;
   }
   
